@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Midsummer Night’s Dream — Story Practice Book (A2)</title>
+  <style>
+    :root{ --ink:#222; --muted:#555; --accent:#0b6efd; --bg:#fafafa; --card:#fff; }
+    *{ box-sizing:border-box }
+    body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; color:var(--ink); background:var(--bg); line-height:1.55 }
+    header, footer{ text-align:center; padding:1rem }
+    header h1{ margin:.25rem 0 .5rem; font-size:clamp(1.4rem,2.8vw,2rem) }
+    header p{ margin:0; color:var(--muted) }
+    .wrap{ max-width:1000px; margin:0 auto; padding:1rem }
+
+    .card{ background:var(--card); border:1px solid #e6e6e6; border-radius:14px; box-shadow:0 1px 3px rgba(0,0,0,.05); margin:1rem 0; overflow:hidden; display:grid; grid-template-columns:1fr; align-items:start }
+    @media(min-width:720px){ .card{ grid-template-columns:0.3fr 0.7fr } }
+    .card .media{ width:100%; height:auto; display:block; object-fit:contain; background:#f0f0f0 }
+    .card .pad{ padding:1rem 1.25rem }
+
+    header.wrap img{ width:100%; max-width:300px; height:auto; border-radius:12px; object-fit:contain; background:#f0f0f0 }
+
+    h2{ margin:.25rem 0 .6rem; font-size:clamp(1.2rem,2.5vw,1.6rem); color:var(--accent) }
+    .present{ background:#f7fbff; border:1px dashed #cfe7ff; border-radius:10px; padding:.9rem; margin-bottom:.75rem }
+    .past{ background:#fff7fb; border:1px dashed #ffd0ea; border-radius:10px; padding:.9rem }
+
+    input.gap{ display:inline-block; min-width:6ch; border:none; border-bottom:2px solid #777; padding:.15rem .25rem; margin:0 .15rem; font:inherit; background:#fff; transition: border-color .3s; }
+    .verbs{ font-size:.95rem; color:#6a7a40; margin-top:.4rem }
+    .controls{ display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.6rem }
+    button{ cursor:pointer; background:var(--accent); color:#fff; border:0; border-radius:8px; padding:.5rem .8rem; font-weight:600 }
+    button.alt{ background:#6c757d }
+    button.submit-btn{ background:#28a745; }
+    .show-answers-btn { display:none; }
+
+    .cast{ columns:2; column-gap:2rem }
+    @media(max-width:680px){ .cast{ columns:1 } }
+
+    footer{ font-weight:600; font-size:.95rem; color:#333; border-top:1px solid #ececec; margin-top:2rem }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <img src="0.jpg" alt="Cover"/>
+    <h2>A Midsummer Night’s Dream — Story Practice Book</h2>
+    <p><i>written by William Shakespere - Adapted by Panagiotis Domvros, English and Drama Teacher</i></p>
+    <p>Read the <strong>Simple Present</strong> model, then fill only the <strong>verbs</strong> in <strong>Simple Past</strong> below.</p>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <img src="1.jpg" alt="Cast of characters" class="media"/>
+      <div class="pad">
+        <h2>Characters</h2>
+        <div class="cast">
+          <p><strong>Theseus</strong> – Duke of Athens</p>
+          <p><strong>Hippolyta</strong> – Queen of the Amazons, engaged to Theseus</p>
+          <p><strong>Egeus</strong> – An Athenian nobleman</p>
+          <p><strong>Hermia</strong> – Egeus’s daughter, in love with Lysander</p>
+          <p><strong>Lysander</strong> – A young man in love with Hermia</p>
+          <p><strong>Demetrius</strong> – Chosen by Egeus to marry Hermia</p>
+          <p><strong>Helena</strong> – Hermia’s friend, in love with Demetrius</p>
+          <p><strong>Oberon</strong> – King of the Fairies</p>
+          <p><strong>Titania</strong> – Queen of the Fairies</p>
+          <p><strong>Puck</strong> – A mischievous fairy</p>
+          <p><strong>The Mechanicals</strong> – Workers rehearsing a play</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="s1">
+      <img src="2.jpg" alt="A Problem in Athens" class="media"/>
+      <div class="pad">
+        <h2>A Problem in Athens</h2>
+        <div class="present">In Athens, Duke Theseus <strong>prepares</strong> to marry Hippolyta. Egeus <strong>comes</strong> to him with a problem: “My daughter Hermia <strong>refuses</strong> to marry Demetrius. She <strong>loves</strong> Lysander instead!”</div>
+        <div class="past">In Athens, Duke Theseus <input class="gap" data-answer="prepared"/> to marry Hippolyta. Egeus <input class="gap" data-answer="came"/> to him with a problem: “My daughter Hermia <input class="gap" data-answer="refused"/> to marry Demetrius. She <input class="gap" data-answer="loved"/> Lysander instead!”</div>
+        <div class="verbs"><em>Verb box:</em> prepare, come, refuse, love</div>
+        <div class="controls"><button class="submit-btn" onclick="checkAnswers(this)">Submit</button><button class="show-answers-btn" onclick="reveal(this)">Show answers</button><button class="alt" onclick="clearAns(this)">Clear</button></div>
+      </div>
+    </section>
+
+    <section class="card" id="s2">
+      <img src="3.jpg" alt="The Duke’s Order" class="media"/>
+      <div class="pad">
+        <h2>The Duke’s Order</h2>
+        <div class="present">The Duke <strong>tells</strong> Hermia she <strong>must</strong> obey her father. She <strong>faces</strong> the law if she does not <strong>marry</strong> Demetrius.</div>
+        <div class="past">The Duke <input class="gap" data-answer="told"/> Hermia she <input class="gap" data-answer="had"/> to obey her father. She <input class="gap" data-answer="faced"/> the law if she <input class="gap" data-answer="did not marry"/> Demetrius.</div>
+        <div class="verbs"><em>Verb box:</em> tell, have to, face, not marry</div>
+        <div class="controls"><button class="submit-btn" onclick="checkAnswers(this)">Submit</button><button class="show-answers-btn" onclick="reveal(this)">Show answers</button><button class="alt" onclick="clearAns(this)">Clear</button></div>
+      </div>
+    </section>
+
+    <section class="card" id="s3">
+        <img src="4.jpg" alt="The Secret Plan" class="media"/>
+        <div class="pad">
+        <h2>The Secret Plan</h2>
+        <div class="present">Hermia <strong>whispers</strong> to Lysander that they <strong>run</strong> away to the forest and <strong>get</strong> married there.</div>
+        <div class="past">Hermia <input class="gap" data-answer="whispered"/> to Lysander that they <input class="gap" data-answer="ran"/> away to the forest and <input class="gap" data-answer="got"/> married there.</div>
+        <div class="verbs"><em>Verb box:</em> whisper, run, get</div>
+        <div class="controls"><button class="submit-btn" onclick="checkAnswers(this)">Submit</button><button class="show-answers-btn" onclick="reveal(this)">Show answers</button><button class="alt" onclick="clearAns(this)">Clear</button></div>
+        </div>
+    </section>
+
+    <section class="card" id="s4">
+        <img src="5.jpg" alt="Helena Tells Demetrius" class="media"/>
+        <div class="pad">
+        <h2>Helena Tells Demetrius</h2>
+        <div class="present">Hermia <strong>tells</strong> Helena the plan. Helena <strong>loves</strong> Demetrius, so she <strong>tells</strong> him the secret and <strong>hopes</strong> to win his love.</div>
+        <div class="past">Hermia <input class="gap" data-answer="told"/> Helena the plan. Helena <input class="gap" data-answer="loved"/> Demetrius, so she <input class="gap" data-answer="told"/> him the secret and <input class="gap" data-answer="hoped"/> to win his love.</div>
+        <div class="verbs"><em>Verb box:</em> tell, love, tell, hope</div>
+        <div class="controls"><button class="submit-btn" onclick="checkAnswers(this)">Submit</button><button class="show-answers-btn" onclick="reveal(this)">Show answers</button><button class="alt" onclick="clearAns(this)">Clear</button></div>
+        </div>
+    </section>
+
+    <section class="card" id="s5">
+        <img src="6.jpg" alt="Into the Forest" class="media"/>
+        <div class="pad">
+        <h2>Into the Forest</h2>
+        <div class="present">Demetrius <strong>follows</strong> Hermia into the forest, and Helena <strong>follows</strong> Demetrius.</div>
+        <div class="past">Demetrius <input class="gap" data-answer="followed"/> Hermia into the forest, and Helena <input class="gap" data-answer="followed"/> Demetrius.</div>
+        <div class="verbs"><em>Verb box:</em> follow, follow</div>
+        <div class="controls"><button class="submit-btn" onclick="checkAnswers(this)">Submit</button><button class="show-answers-btn" onclick="reveal(this)">Show answers</button><button class="alt" onclick="clearAns(this)">Clear</button></div>
+        </div>
+    </section>
+
+    <section class="card" id="s6">
+        <img src="7.jpg" alt="A Fairy Disagreement" class="media"/>
+        <div class="pad">
+        <h2>A Fairy Disagreement</h2>
+        <div class="present">In the forest, King Oberon and Queen Titania <strong>argue</strong> about a special boy. Titania <strong>does not give</strong> him to Oberon.</div>
+        <div class="past">In the forest, King Oberon and Queen Titania <input class="gap" data-answer="argued"/> about a special boy. Titania <input class="gap" data-answer="did not give"/> him to Oberon.</div>
+        <div class="verbs"><em>Verb box:</em> argue, not give</div>
+        <div class="controls"><button class="submit-btn" onclick="checkAnswers(this)">Submit</button><button class="show-answers-btn" onclick="reveal(this)">Show answers</button><button class="alt" onclick="clearAns(this)">Clear</button></div>
+        </div>
+    </section>
+
+    <section class="card" id="s7">
+        <img src="8.jpg" alt="The Magic Flower" class="media"/>
+        <div class="pad">
+        <h2>The Magic Flower</h2>
+        <div class="present">Angry, Oberon <strong>asks</strong> Puck to <strong>fetch</strong> a magic flower.</div>
+        <div class="past">Angry, Oberon <input class="gap" data-answer="asked"/> Puck to fetch a magic flower.</div>
+        <div class="verbs"><em>Verb box:</em> ask, fetch</div>
+        <div class="controls"><button class="submit-btn" onclick="checkAnswers(this)">Submit</button><button class="show-answers-btn" onclick="reveal(this)">Show answers</button><button class="alt" onclick="clearAns(this)">Clear</button></div>
+        </div>
+    </section>
+
+    <section class="card" id="s8">
+        <img src="9.jpg" alt="Love at First Sight" class="media"/>
+        <div class="pad">
+        <h2>Love at First Sight</h2>
+        <div class="present">The flower’s juice <strong>makes</strong> a person <strong>fall</strong> in love with the first face they <strong>see</strong>.</div>
+        <div class="past">The flower’s juice <input class="gap" data-answer="made"/> a person fall in love with the first face they <input class="gap" data-answer="saw"/>.</div>
+        <div class="verbs"><em>Verb box:</em> make, fall, see</div>
+        <div class="controls"><button class="submit-btn" onclick="checkAnswers(this)">Submit</button><button class="show-answers-btn" onclick="reveal(this)">Show answers</button><button class="alt" onclick="clearAns(this)">Clear</button></div>
+        </div>
+    </section>
+
+    <section class="card" id="s9">
+        <img src="10.jpg" alt="Help for Helena" class="media"/>
+        <div class="pad">
+        <h2>Help for Helena</h2>
+        <div class="present">Oberon <strong>sees</strong> Demetrius reject Helena. He <strong>feels</strong> sorry and <strong>tells</strong> Puck to use the juice on Demetrius.</div>
+        <div class="past">Oberon <input class="gap" data-answer="saw"/> Demetrius reject Helena. He <input class="gap" data-answer="felt"/> sorry and <input class="gap" data-answer="told"/> Puck to use the juice on Demetrius.</div>
+        <div class="verbs"><em>Verb box:</em> see, feel, tell</div>
+        <div class="controls"><button class="submit-btn" onclick="checkAnswers(this)">Submit</button><button class="show-answers-btn" onclick="reveal(this)">Show answers</button><button class="alt" onclick="clearAns(this)">Clear</button></div>
+        </div>
+    </section>
+
+    <section class="card" id="s10">
+        <img src="11.jpg" alt="Puck’s Mistake" class="media"/>
+        <div class="pad">
+        <h2>Puck’s Mistake</h2>
+        <div class="present">Puck <strong>puts</strong> the juice on Lysander’s eyes by mistake. When Lysander <strong>wakes</strong>, he <strong>sees</strong> Helena and <strong>falls</strong> in love with her.</div>
+        <div class="past">Puck <input class="gap" data-answer="put"/> the juice on Lysander’s eyes by mistake. When Lysander <input class="gap" data-answer="woke"/>, he <input class="gap" data-answer="saw"/> Helena and <input class="gap" data-answer="fell"/> in love with her.</div>
+        <div class="verbs"><em>Verb box:</em> put, wake, see, fall</div>
+        <div class="controls"><button class="submit-btn" onclick="checkAnswers(this)">Submit</button><button class="show-answers-btn" onclick="reveal(this)">Show answers</button><button class="alt" onclick="clearAns(this)">Clear</button></div>
+        </div>
+    </section>
+
+    <section class="card" id="s11">
+        <img src="12.jpg" alt="New Feelings" class="media"/>
+        <div class="pad">
+        <h2>New Feelings</h2>
+        <div class="present">Now Lysander <strong>loves</strong> Helena. Demetrius still <strong>loves</strong> Hermia, and Helena <strong>thinks</strong> everyone <strong>mocks</strong> her.</div>
+        <div class="past">Now Lysander <input class="gap" data-answer="loved"/> Helena. Demetrius still <input class="gap" data-answer="loved"/> Hermia, and Helena <input class="gap" data-answer="thought"/> everyone <input class="gap" data-answer="mocked"/> her.</div>
+        <div class="verbs"><em>Verb box:</em> love, love, think, mock</div>
+        <div class="controls"><button class="submit-btn" onclick="checkAnswers(this)">Submit</button><button class="show-answers-btn" onclick="reveal(this)">Show answers</button><button class="alt" onclick="clearAns(this)">Clear</button></div>
+        </div>
+    </section>
+
+    <section class="card" id="s12">
+        <img src="13.jpg" alt="Double Trouble" class="media"/>
+        <div class="pad">
+        <h2>Double Trouble</h2>
+        <div class="present">Puck <strong>realizes</strong> his mistake and <strong>puts</strong> the juice on Demetrius too. Demetrius <strong>wakes</strong> and <strong>falls</strong> in love with Helena.</div>
+        <div class="past">Puck <input class="gap" data-answer="realized"/> his mistake and <input class="gap" data-answer="put"/> the juice on Demetrius too. Demetrius <input class="gap" data-answer="woke"/> and <input class="gap" data-answer="fell"/> in love with Helena.</div>
+        <div class="verbs"><em>Verb box:</em> realize, put, wake, fall</div>
+        <div class="controls"><button class="submit-btn" onclick="checkAnswers(this)">Submit</button><button class="show-answers-btn" onclick="reveal(this)">Show answers</button><button class="alt" onclick="clearAns(this)">Clear</button></div>
+        </div>
+    </section>
+
+    <section class="card" id="s13">
+        <img src="14.jpg" alt="Arguments in the Woods" class="media"/>
+        <div class="pad">
+        <h2>Arguments in the Woods</h2>
+        <div class="present">The four friends <strong>argue</strong> in the forest, confused and hurt.</div>
+        <div class="past">The four friends <input class="gap" data-answer="argued"/> in the forest, confused and hurt.</div>
+        <div class="verbs"><em>Verb box:</em> argue</div>
+        <div class="controls"><button class="submit-btn" onclick="checkAnswers(this)">Submit</button><button class="show-answers-btn" onclick="reveal(this)">Show answers</button><button class="alt" onclick="clearAns(this)">Clear</button></div>
+        </div>
+    </section>
+
+    <section class="card" id="s14">
+        <img src="15.jpg" alt="Titania’s Enchantment" class="media"/>
+        <div class="pad">
+        <h2>Titania’s Enchantment</h2>
+        <div class="present">Puck also <strong>puts</strong> the juice on Titania’s eyes. She <strong>wakes</strong> and <strong>falls</strong> in love with Bottom, who <strong>has</strong> a donkey’s head.</div>
+        <div class="past">Puck also <input class="gap" data-answer="put"/> the juice on Titania’s eyes. She <input class="gap" data-answer="woke"/> and <input class="gap" data-answer="fell"/> in love with Bottom, who <input class="gap" data-answer="had"/> a donkey’s head.</div>
+        <div class="verbs"><em>Verb box:</em> put, wake, fall, have</div>
+        <div class="controls"><button class="submit-btn" onclick="checkAnswers(this)">Submit</button><button class="show-answers-btn" onclick="reveal(this)">Show answers</button><button class="alt" onclick="clearAns(this)">Clear</button></div>
+        </div>
+    </section>
+
+    <section class="card" id="s15">
+        <img src="16.jpg" alt="Breaking the Spells" class="media"/>
+        <div class="pad">
+        <h2>Breaking the Spells</h2>
+        <div class="present">Oberon <strong>feels</strong> sorry and <strong>breaks</strong> the spell on Titania. He also <strong>tells</strong> Puck to fix the lovers.</div>
+        <div class="past">Oberon <input class="gap" data-answer="felt"/> sorry and <input class="gap" data-answer="broke"/> the spell on Titania. He also <input class="gap" data-answer="told"/> Puck to fix the lovers.</div>
+        <div class="verbs"><em>Verb box:</em> feel, break, tell</div>
+        <div class="controls"><button class="submit-btn" onclick="checkAnswers(this)">Submit</button><button class="show-answers-btn" onclick="reveal(this)">Show answers</button><button class="alt" onclick="clearAns(this)">Clear</button></div>
+        </div>
+    </section>
+
+    <section class="card" id="s16">
+        <img src="17.jpg" alt="Weddings and a Play" class="media"/>
+        <div class="pad">
+        <h2>Weddings and a Play</h2>
+        <div class="present">When the lovers <strong>wake</strong>, the magic <strong>is</strong> gone: Lysander <strong>loves</strong> Hermia again, and Demetrius <strong>loves</strong> Helena. Theseus <strong>finds</strong> them and <strong>agrees</strong> to the marriages. At the wedding, the workers <strong>perform</strong> their funny play.</div>
+        <div class="past">When the lovers <input class="gap" data-answer="woke"/>, the magic <input class="gap" data-answer="was"/> gone: Lysander <input class="gap" data-answer="loved"/> Hermia again, and Demetrius <input class="gap" data-answer="loved"/> Helena. Theseus <input class="gap" data-answer="found"/> them and <input class="gap" data-answer="agreed"/> to the marriages. At the wedding, the workers <input class="gap" data-answer="performed"/> their funny play.</div>
+        <div class="verbs"><em>Verb box:</em> wake, be, love, love, find, agree, perform</div>
+        <div class="controls"><button class="submit-btn" onclick="checkAnswers(this)">Submit</button><button class="show-answers-btn" onclick="reveal(this)">Show answers</button><button class="alt" onclick="clearAns(this)">Clear</button></div>
+        </div>
+    </section>
+
+  </main>
+
+  <footer>
+    ✨✍️ Devised by Panagiotis Domvros, English and Drama Teacher, All Rights Reserved ✍️✨
+  </footer>
+
+  <script>
+    function checkAnswers(btn) {
+      const box = btn.closest('.pad');
+      const inputs = box.querySelectorAll('input.gap');
+      let hasMistake = false;
+
+      inputs.forEach(inp => {
+        const userAnswer = inp.value.trim().toLowerCase();
+        const correctAnswer = inp.dataset.answer.toLowerCase();
+        if (userAnswer === correctAnswer) {
+          inp.style.borderColor = 'green';
+        } else {
+          inp.style.borderColor = 'red';
+          hasMistake = true;
+        }
+      });
+
+      const showBtn = box.querySelector('.show-answers-btn');
+      if (hasMistake) {
+        showBtn.style.display = 'inline-block';
+      } else {
+        showBtn.style.display = 'none';
+      }
+    }
+
+    function reveal(btn){
+      const box = btn.closest('.pad');
+      box.querySelectorAll('input.gap').forEach(inp => { 
+        inp.value = inp.dataset.answer || ''; 
+        inp.style.borderColor = '#777';
+      });
+      btn.style.display = 'none';
+    }
+
+    function clearAns(btn){
+      const box = btn.closest('.pad');
+      box.querySelectorAll('input.gap').forEach(inp => { 
+        inp.value=''; 
+        inp.style.borderColor = '#777';
+      });
+      const showBtn = box.querySelector('.show-answers-btn');
+      showBtn.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
